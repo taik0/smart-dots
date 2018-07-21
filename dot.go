@@ -89,8 +89,10 @@ func (d *Dot) move() {
 	d.acc = d.brain.directions[d.brain.step]
 	d.brain.step++
 	d.vel.Add(d.acc)
-	if d.vel.X > 2 || d.vel.Y > 2 {
+	if d.vel.X > 2 {
 		d.vel.X = 2
+	}
+	if d.vel.Y > 2 {
 		d.vel.Y = 2
 	}
 	d.pos.Add(d.vel)
